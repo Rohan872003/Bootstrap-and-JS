@@ -1,0 +1,186 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task-5</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+        font-family: "Poppins", sans-serif;
+      }
+
+      #form {
+        width: 500px;
+        margin: 20vh auto 0 auto;
+        padding: 20px;
+        background-color: whitesmoke;
+        border-radius: 4px;
+        font-size: 20px;
+      }
+
+      #form h1 {
+        color: #0f2027;
+        text-align: center;
+      }
+
+      #form button {
+        padding: 10px;
+        margin-top: 10px;
+        width: 100%;
+        color: white;
+        background-color: rgb(41, 57, 194);
+        border: none;
+        border-radius: 4px;
+      }
+
+      .input-control {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .input-control input {
+        border: 2px solid #f0f0f0;
+        border-radius: 4px;
+        display: block;
+        font-size: 12px;
+        padding: 10px;
+        width: 100%;
+      }
+
+      .input-control input:focus {
+        outline: 0;
+      }
+
+      .input-control.success input {
+        border-color: #09c372;
+      }
+
+      .input-control.error input {
+        border-color: #ff3860;
+      }
+
+      .input-control .error {
+        color: #ff3860;
+        font-size: 9px;
+        height: 13px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <form id="form" action="/">
+        <div class="input-control">
+          <label for="username">Name</label>
+          <input id="username" name="username" type="text" />
+          <div class="error"></div>
+        </div>
+        <div class="input-control">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="text" />
+          <div class="error"></div>
+        </div>
+        <div class="input-control">
+          <label for="website">Website</label>
+          <input id="website" name="website" type="text" />
+          <div class="error"></div>
+        </div>
+        <div class="input-control">
+          <label for="msg">Message</label>
+          <textarea name="msg" id="msg" cols="20" rows="4"></textarea>
+          <div class="error"></div>
+        </div>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+    <script>
+      const form = document.getElementById("form");
+      const username = document.getElementById("username");
+      const email = document.getElementById("email");
+      const website = document.getElementById("website");
+      const msg = document.getElementById("msg");
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        validateInputs();
+      });
+
+      const setError = (element, message) => {
+        const inputControl = element.parentElement;
+        const errorDisplay = inputControl.querySelector(".error");
+
+        errorDisplay.innerText = message;
+        inputControl.classList.add("error");
+        inputControl.classList.remove("success");
+      };
+
+      const setSuccess = (element) => {
+        const inputControl = element.parentElement;
+        const errorDisplay = inputControl.querySelector(".error");
+
+        errorDisplay.innerText = "";
+        inputControl.classList.add("success");
+        inputControl.classList.remove("error");
+      };
+
+      const isValidEmail = (email) => {
+        const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(String(email).toLowerCase());
+      };
+      function isValidUrl(str) {
+        const pattern = new RegExp(
+          "^([a-zA-Z]+:\\/\\/)?" + // protocol
+          "((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|" + // domain name
+          "((\\d{1,3}\\.){3}\\d{1,3}))" + // OR IP (v4) address
+          "(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*" + // port and path
+          "(\\?[;&a-z\\d%_.~+=-]*)?" + // query string
+            "(\\#[-a-z\\d_]*)?$", // fragment locator
+          "i"
+        );
+        return pattern.test(str);
+      }
+
+      const validateInputs = () => {
+        const usernameValue = username.value.trim();
+        const emailValue = email.value.trim();
+        const websiteValue = website.value.trim();
+        const msgValue = msg.value.trim();
+
+        if (usernameValue === "") {
+          setError(username, "Name is required");
+        } else {
+          setSuccess(username);
+        }
+
+        if (emailValue === "") {
+          setError(email, "Email is required");
+        } else if (!isValidEmail(emailValue)) {
+          setError(email, "Provide a valid email address");
+        } else {
+          setSuccess(email);
+        }
+
+        if (websiteValue === "") {
+          setError(website, "URL is required");
+        } else if (!isValidUrl(websiteValue)) {
+          setError(website, "Provide a valid URL");
+        } else {
+          setSuccess(website);
+        }
+
+        if (msgValue === "") {
+          setError(msg, "This field is required");
+        } else {
+          setSuccess(msg);
+        }
+      };
+    </script>
+  </body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Task-6</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+      .error-message {
+        color: rgba(255,0,0,0.8);
+        font-size: smaller;
+      }
+      .error-input {
+        border: 3px solid rgba(255,0,0,0.5) !important;
+      }
+      .container{
+        
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        background-color: #f2f2f2;
+        width:50%;
+        height:500px;
+      }
+    </style>
+
+  </head>
+  <body>
+    <div class="container my-4">
+    <form>
+      <label for="name">Name</label><br>
+      <input type="text" id="name" 
+      value=""><br><span class="error-message" id="name-error"></span><br />
+      <label for="email">Email</label><br>
+      <input type="email" id="email" value=""><br><span class="error-message" id="email-error"></span></span><br />
+
+      <label for="pwd">Password</label><br>
+      <input type="password" id="pwd" value="" /><br><span class="error-message" id="pwd-error"></span><br />
+
+      <label for="hobby">Hobbies</label><br>
+      <input type="text" id="hobby" value="">
+      <br><br>
+      <input type="button" class="btn btn-danger mx-4"value="Submit" onclick="validateForm()" />
+    </form>
+
+  </div>
+    <script>
+      function validateForm() {
+        let isValid = true;
+        document.querySelectorAll(".error-message").forEach(function (element) {
+          element.textContent = "";
+        });
+        document
+          .querySelectorAll("input, textarea")
+          .forEach(function (element) {
+            element.classList.remove("error-input");
+          });
+        const name = document.getElementById("name").value;
+        if (name.trim() === "") {
+          document.getElementById("name-error").textContent =
+            "Name is required";
+          document.getElementById("name").classList.add("error-input"); 
+          isValid = false;
+        }
+        const email = document.getElementById("email").value;
+        const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+        if (!emailPattern.test(email)) {
+          document.getElementById("email-error").textContent =
+            "Email address is required";
+          document.getElementById("email").classList.add("error-input"); 
+          isValid = false;
+        }
+        const pwd = document.getElementById("pwd").value;
+        if (pwd.trim() === "") {
+          document.getElementById("pwd-error").textContent =
+            "Password is required";
+          document.getElementById("pwd").classList.add("error-input"); 
+          isValid = false;
+        } 
+        return isValid;
+      }
+    </script>
+  </body>
+</html>
+

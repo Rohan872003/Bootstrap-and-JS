@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <title>Task-2</title>
+    <style>
+      body {
+        background-color: gainsboro;
+      }
+     
+      .one {
+        
+        width: 100%;
+        height: 700px;
+        
+      }
+      .heading {
+        height: 92px;
+      }
+      .help {
+        font-size: 14px;
+        display: flex;
+        float: right;
+        margin-right:6px;
+      }
+      .navbar-brand {
+        font-size: 25px;
+        font-weight: 700;
+        color: rgba(18, 39, 224, 0.677);
+      }
+      .two {
+        margin:2px;
+        height: 56px;
+        
+        
+      }
+      .carousel-inner {
+        height: 50%;
+      }
+      img {
+        height:500px;
+      }
+      
+      .foot{
+        display:inline-block;
+        padding-top:10px;
+        height:200px;
+      }
+      .content{
+        padding-top:6px;
+      }
+      
+}
+    </style>
+  </head>
+  <body>
+    <div class=" container one">
+      <div class="container-fluid heading bg-warning">
+        <a class="navbar-brand text-dark fs-4 mx-2" href="#"> Builderz</a>
+        <div class="help">
+          <i class="fa-solid fa-clock"> </i>
+          <p><b>Opening Hour</b> <br>Mon-Fri,8:00-9:00</p>
+          <br />
+          <i class="fa-solid fa-phone"></i>
+          <p> <b>Call Us </b><br>+012 345 6789 </p>
+          <br>
+          <i class="fa-solid fa-inbox"></i>
+          <p><b>Email Us </b><br>info@example.com </p>
+        </div>
+        <div class="two bg-dark">
+          <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+            <div class="container-fluid">
+              <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+              >
+                <span class="navbar-toggler-icon text-light"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link text-light" aria-current="page" href="#"
+                      >HOME</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-light" href="#">ABOUT</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-light" href="#">SERVICE</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-light" href="#">TEAM</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-light" href="#">PROJECT</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a
+                      class="nav-link text-light dropdown-toggle"
+                      href="#"
+                      id="navbarDropdown"
+                      role="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                      PAGES
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <li><a class="dropdown-item" href="#">Page-1</a></li>
+                      <li><a class="dropdown-item" href="#">Page-2</a></li>
+                      <li><a class="dropdown-item" href="#">Page-3</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-light" href="#">CONTACT</a>
+                  </li>
+                </ul>
+                <form class="d-flex">
+                  <button class="btn btn-outline-light" type="submit">
+                    Get a Quote
+                  </button>
+                </form>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </div>
+      <div
+        id="carouselExampleFade"
+        class="carousel slide carousel-fade"
+        data-bs-ride="carousel"
+      >
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img
+              src="https://solidlinemcgroup.com/wp-content/uploads/2022/06/engineering-projects-management-768x462.jpg"
+              class="d-block w-100"
+              alt="..."
+            />
+            <div class="carousel-caption d-none d-md-block">
+              <h5 class="text-dark"><b>We are Professional</b></h5>
+              <p class="text-dark"><b>For your dream project</b></p>
+              <button class="btn btn-outline-warning text-dark" type="submit">
+                Get a Quote
+              </button>
+            </div>
+          </div>
+          
+          <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+              </div>
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="https://solidlinemcgroup.com/wp-content/uploads/2022/06/engineering-projects-management-768x462.jpg" class="d-block w-100" alt="...">
+                  <div class="carousel-caption d-none d-md-block">
+                    <h5 class="text-white fs-3">We are Professional</h5>
+                    <p class="text-white fs-1">For Your Dream Project</p>
+                    <button class="btn btn-outline-warning text-white" type="submit">
+                        Get a Quote
+                      </button>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img src="https://media.gettyimages.com/photos/hard-working-construction-worker-picture-id612833402" class="d-block w-100" alt="...">
+                  <div class="carousel-caption d-none d-md-block">
+                      <h5 class="text-white fs-3">We are Professional</h5>
+                      <p class="text-white fs-1">For Your Dream Project</p>
+                      <button class="btn btn-outline-warning text-white" type="submit">
+                          Get a Quote
+                        </button>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img src="https://thumbs.dreamstime.com/b/building-construction-area-men-work-90179133.jpg" class="d-block w-100" alt="...">
+                  <div class="carousel-caption d-none d-md-block">
+                      <h5 class="text-white fs-3">We are Professional</h5>
+                      <p class="text-white fs-1">For Your Dream Project</p>
+                      <button class="btn btn-outline-warning text-white" type="submit">
+                          Get a Quote
+                        </button>
+                  </div>
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+            <footer>
+                <div class="container-fluid">
+                    <div class="row">
+                      <div class="foot col-4 bg-dark">
+                          <i class="fa-solid fa-user-nurse"></i>
+                          <div class="content">
+                        <h3 class="text-warning">Expert Worker</h3>
+                        <p class="text-warning">Lorem ipsum dolor sit amet elit. Possimus repudiandae eligendi commodi.</p>
+                      </div>
+                      </div>
+                      <div class="foot col-4 bg-warning">
+                          <i class="fa-solid fa-building-shield"></i>
+                          <div class="content">
+                        <h3>Quality Work</h3>
+                        <p>Lorem ipsum dolor sit amet.Phasus nec pretim ornare velit non</p>
+                      </div>
+                      </div>
+                      <div class="foot col-4 bg-dark">
+                          <i class="fa-regular fa-clock"></i>
+                          <div class="content">
+                        <h3 class="text-warning">24/7 Support</h3>
+                        <p class="text-warning">Lorem ipsum dolor sit amet 
+                          elit.Phasus nec pretim ornare 
+                          velit non</p>
+                      </div>
+                      </div>
+                    </div>
+                  </div>
+              </footer>
+          </div>
+    
+  </body>
+</html>
+
